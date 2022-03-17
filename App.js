@@ -26,7 +26,6 @@ import Home from './Src/Screens/Home';
 import Routes from './Src/Navigation/Routes';
 import {observer} from 'mobx-react';
 import {authStore} from './Src/Store/AuthStore/AuthStore';
-// import SplashScreen from 'react-native-splash-screen';
 import RNBootSplash from 'react-native-bootsplash';
 import ActionChild from './Src/Components/ActionChild';
 const App = observer(() => {
