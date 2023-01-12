@@ -1,12 +1,14 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import React from 'react';
+
+import React, {useState, useEffect} from 'react';
 import Donut from './Donut';
 
-const Progress = () => {
+const Progress = ({res, way, Kcal}) => {
+ 
   const donuts = [
-    {color: '#e09d3f', radius: 40, percentage: 100, type: 'distance'},
-    {color: '#2279ab', radius: 40, percentage: 56, type: 'steps'},
-    {color: '#28ad9a', radius: 40, percentage: 77, type: 'Calories'},
+    {color: '#e09d3f', radius: 40, percentage: way?.distance, type: 'distance'},
+    {color: '#2279ab', radius: 40, percentage: res?.value, type: 'steps'},
+    {color: '#28ad9a', radius: 40, percentage: Kcal?.calorie, type: 'Calories'},
   ];
   return (
     <View>

@@ -5145,7 +5145,7 @@ mobx@^6.7.0:
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-6.7.0.tgz#2d805610fee1801fd015c54fd5400d2601aa3768"
   integrity sha512-1kBLBdSNG2bA522HQdbsTvwAwYf9hq9FWxmlhX7wTsJUAI54907J+ozfGW+LoYUo06vjit748g6QH1AAGLNebw==
 
-moment@^2.29.4:
+moment@^2.29.2, moment@^2.29.4:
   version "2.29.4"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
   integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
@@ -5801,6 +5801,13 @@ react-native-gesture-handler@^2.8.0:
     invariant "^2.2.4"
     lodash "^4.17.21"
     prop-types "^15.7.2"
+
+react-native-google-fit@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/react-native-google-fit/-/react-native-google-fit-0.19.1.tgz#1728b51d4e0748fa8c77562f70188b0fc3f819b8"
+  integrity sha512-vRhzPB9nZXkKnCDy0e5Ibn5s0AKQhVVQBvNHZuNBQlnNMqIYhSo6GieymPgSTWuWmew/PnFx7VnuHbeeKnX+zQ==
+  dependencies:
+    moment "^2.29.2"
 
 react-native-gradle-plugin@^0.70.3:
   version "0.70.3"

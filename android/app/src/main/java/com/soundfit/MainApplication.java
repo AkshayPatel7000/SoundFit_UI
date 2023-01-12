@@ -15,6 +15,7 @@ import java.util.List;
 
 import com.horcrux.svg.SvgPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
+import com.reactnative.googlefit.GoogleFitPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 

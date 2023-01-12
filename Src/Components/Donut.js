@@ -47,7 +47,7 @@ const Donut = ({
           circumference - (circumference * maxPerc) / 100;
         if (inputRef?.current) {
           inputRef.current.setNativeProps({
-            text: `${Math.round(v.value)}`,
+            text: `${v.value.toFixed(2)}`,
           });
         }
         if (circleRef?.current) {

@@ -13,5 +13,6 @@ class AuthStore {
   setActionSheet(value) {
     this.userData.actionSheet = value;
   }
+  
 }
 export const authStore = new AuthStore();
