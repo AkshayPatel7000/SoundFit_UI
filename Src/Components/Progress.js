@@ -1,14 +1,15 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 import React, {useState, useEffect} from 'react';
+import { authStore } from '../Store/AuthStore/AuthStore';
 import Donut from './Donut';
 
-const Progress = ({res, way, Kcal}) => {
+const Progress = () => {
  
   const donuts = [
-    {color: '#e09d3f', radius: 40, percentage: way?.distance, type: 'distance'},
-    {color: '#2279ab', radius: 40, percentage: res?.value, type: 'steps'},
-    {color: '#28ad9a', radius: 40, percentage: Kcal?.calorie, type: 'Calories'},
+    {color: '#e09d3f', radius: 40, percentage: authStore?.userData?.distance?.distance, type: 'distance'},
+    {color: '#2279ab', radius: 40, percentage: authStore?.userData?.steps?.value, type: 'steps'},
+    {color: '#28ad9a', radius: 40, percentage: authStore?.userData?.calorie?.calorie, type: 'Calories'},
   ];
   return (
     <View>
