@@ -5,7 +5,9 @@ import { authStore } from '../Store/AuthStore/AuthStore';
 import Donut from './Donut';
 
 const Progress = () => {
- 
+  useEffect(()=>(
+    console.log("res-->", authStore.userData)
+  ),[authStore.userData.actionSheet])
   const donuts = [
     {color: '#e09d3f', radius: 40, percentage: authStore?.userData?.distance?.distance, type: 'distance'},
     {color: '#2279ab', radius: 40, percentage: authStore?.userData?.steps?.value, type: 'steps'},
