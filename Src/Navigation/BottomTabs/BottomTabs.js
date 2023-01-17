@@ -111,11 +111,11 @@ const BottomTabs = () => {
         options={{icon: 'walk'}}
         component={Shop}
       />
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="Watchfaces"
         options={{icon: 'ios-watch'}}
         component={Home}
-      />
+      /> */}
       <BottomTab.Screen
         name="Profile"
         options={{icon: 'person'}}

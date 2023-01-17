@@ -26,22 +26,22 @@ const {height, width} = Dimensions.get('window');
 const Home = props => {
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     if (fitStore?.userData?.auth?.accessToken) {
-  //       getRefreshToken().then(() => {
-  //         setTimeout(() => {
-  //           getActivityData();
-  //           // getBreathingData();
-  //           getProfileData();
-  //         }, 500);
-  //       });
-  //     }
-  //     if (fitStore?.userData?.auth?.accessToken === undefined) {
-  //       getAuth();
-  //     }
-  //   }, 500);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      if (fitStore?.userData?.auth?.accessToken) {
+        getRefreshToken().then(() => {
+          setTimeout(() => {
+            getActivityData();
+            // getBreathingData();
+            getProfileData();
+          }, 500);
+        });
+      }
+      if (fitStore?.userData?.auth?.accessToken === undefined) {
+        getAuth();
+      }
+    }, 500);
+  }, []);
 
   return (
     <Container style={styles.main}>

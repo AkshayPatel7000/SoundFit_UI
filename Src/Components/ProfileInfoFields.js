@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const ProfileInfoFields = ({keys = 'Name', Value = 'Akshay'}) => {
+const ProfileInfoFields = ({keys = '-', Value = '-'}) => {
   var ifValue =
     Value === null || Value === undefined || Value == '' ? '-' : Value;
   var ifkeys = keys === null || keys === undefined || keys == '' ? '-' : keys;
