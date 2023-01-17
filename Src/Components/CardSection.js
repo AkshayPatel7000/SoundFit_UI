@@ -3,11 +3,12 @@ import {StyleSheet, View} from 'react-native';
 import Card from './Card';
 import { observer } from 'mobx-react-lite';
 import { authStore } from '../Store/AuthStore/AuthStore';
+import { fitStore } from '../Store/AuthStore/FitStore';
 
 const CardSection = () => {
-  useEffect(()=>(
-    console.log("res-->", authStore.userData)
-  ),[authStore.userData.actionSheet])
+  // useEffect(()=>(
+  //   console.log("res-->", authStore.userData)
+  // ),[authStore.userData.actionSheet])
 
   const cards = [
     {
@@ -16,13 +17,13 @@ const CardSection = () => {
       iconGrad: ['#082420', '#1f8778', '#28ad9a'],
       CardTitle: 'Steps Count',
       Description: 'Total steps taken',
-      Duration: authStore?.userData?.steps?.value,
+      Duration: fitStore?.userData?.steps?.value,
     },
     {
       cardArray: ['#2279ab', '#164c6b', '#081a24'],
       icon: 'moon-outline',
       iconGrad: ['#081a24', '#164c6b', '#2279ab'],
-      Duration: authStore?.userData?.sleep?.value,
+      Duration: fitStore?.userData?.sleep?.value,
       Description: 'Total sleep taken',
       CardTitle: 'Sleep',
     },
@@ -31,28 +32,30 @@ const CardSection = () => {
       icon: 'walk-outline',
       iconGrad: ['#3b2910', '#8c6227', '#e09d3f'],
       CardTitle: 'Calories',
-      Duration: authStore?.userData?.calorie?.calorie,
+      Duration: fitStore?.userData?.calorie?.calorie,
+      Description: 'Total burn-out calories',
     },
     {
       cardArray: ['#d446c8', '#6e2769', '#30122e'],
       icon: 'fitness-outline',
       iconGrad: ['#30122e', '#6e2769', '#d446c8'],
       CardTitle: 'Heart Rate',
-      Duration: authStore?.userData?.heartRate?.value,
+      Duration: fitStore?.userData?.heartRate?.value,
+      Description: 'Resting Heart Rate',
     },
     {
       cardArray: ['#b1d43f', '#7d962c', '#262e0d'],
       icon: 'speedometer-outline',
       iconGrad: ['#262e0d', '#7d962c', '#b1d43f'],
       CardTitle: 'Move Minutes',
-      Duration: `${authStore?.userData?.moves[0]?.duration} min`,
+      Duration: `${fitStore?.userData?.moves[0]?.duration} min`,
     },
     {
       cardArray: ['#6cc9e0', '#307d91', '#0d272e'],
       icon: 'snow-outline',
       iconGrad: ['#0d272e', '#307d91', '#6cc9e0'],
       CardTitle: 'Height',
-      Duration: `${authStore?.userData?.height?.value} cm`,
+      Duration: `${fitStore?.userData?.height?.value} cm`,
     },
   ];
   return (
