@@ -17,13 +17,14 @@ import {
   getBreathingData,
   getProfileData,
   getRefreshToken,
+  getSleepData,
 } from '../Utils/FitbitService';
 import {observer} from 'mobx-react-lite';
 import {fitStore} from '../Store/AuthStore/FitStore';
 
-const {height, width} = Dimensions.get('window');
+// const {height, width} = Dimensions.get('window');
 
-const Home = props => {
+const Home = (props) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -33,7 +34,8 @@ const Home = props => {
           setTimeout(() => {
             getActivityData();
             // getBreathingData();
-            getProfileData();
+            // getProfileData();
+            getSleepData();
           }, 500);
         });
       }

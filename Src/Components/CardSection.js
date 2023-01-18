@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import Card from './Card';
-import { observer } from 'mobx-react-lite';
-import { authStore } from '../Store/AuthStore/AuthStore';
-import { fitStore } from '../Store/AuthStore/FitStore';
+import {observer} from 'mobx-react-lite';
+import {authStore} from '../Store/AuthStore/AuthStore';
+import {fitStore} from '../Store/AuthStore/FitStore';
 
 const CardSection = () => {
   // useEffect(()=>(
@@ -13,7 +13,7 @@ const CardSection = () => {
   const cards = [
     {
       cardArray: ['#28ad9a', '#1f8778', '#082420'],
-      icon: 'walk-outline', 
+      icon: 'walk-outline',
       iconGrad: ['#082420', '#1f8778', '#28ad9a'],
       CardTitle: 'Steps Count',
       Description: 'Total steps taken',
@@ -23,7 +23,11 @@ const CardSection = () => {
       cardArray: ['#2279ab', '#164c6b', '#081a24'],
       icon: 'moon-outline',
       iconGrad: ['#081a24', '#164c6b', '#2279ab'],
-      Duration: fitStore?.userData?.sleep?.value,
+      Duration: fitStore?.userData?.sleep?.value
+        ? `${parseInt(fitStore?.userData?.sleep?.value / 60)} : ${parseInt(
+            fitStore?.userData?.sleep?.value % 60,
+          )} Hr`
+        : '-',
       Description: 'Total sleep taken',
       CardTitle: 'Sleep',
     },
@@ -47,8 +51,11 @@ const CardSection = () => {
       cardArray: ['#b1d43f', '#7d962c', '#262e0d'],
       icon: 'speedometer-outline',
       iconGrad: ['#262e0d', '#7d962c', '#b1d43f'],
-      CardTitle: 'Move Minutes',
-      Duration: `${fitStore?.userData?.moves[0]?.duration} min`,
+      CardTitle: 'Total Distance',
+      Duration:
+        fitStore?.userData?.moves?.length > 0
+          ? `${fitStore?.userData?.moves[0]?.distance} KM`
+          : '-',
     },
     {
       cardArray: ['#6cc9e0', '#307d91', '#0d272e'],

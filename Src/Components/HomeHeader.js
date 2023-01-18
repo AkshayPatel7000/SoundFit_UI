@@ -11,6 +11,7 @@ import {
 
 import moment from 'moment';
 import {authStore} from '../Store/AuthStore/AuthStore';
+import { getRevoke } from '../Utils/FitbitService';
 const {height, width} = Dimensions.get('window');
 
 const HomeHeader = () => {
@@ -36,7 +37,7 @@ const HomeHeader = () => {
           <Text style={styles.Day}>Today</Text>
           <Text style={styles.Date}>{Date}</Text>
         </View>
-        <TouchableOpacity onPress={onPress}>
+        <TouchableOpacity onPress={()=>{getRevoke()}}>
           <Image
             source={require('../Assets/21458-NTQL9F.png')}
             style={{width: 25, height: 28}}

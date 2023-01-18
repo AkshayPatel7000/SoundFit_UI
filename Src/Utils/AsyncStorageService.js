@@ -17,4 +17,12 @@ const getAsyncData = async key => {
   }
 };
 
-export {setAsyncData, getAsyncData};
+const clearAllAsync = async () => {
+  try{
+    await AsyncStorage.multiRemove(["auth"]);
+  }catch(e){
+    console.log('AsyncStorage multiRemove Error --> ', JSON.stringify(e));
+  }
+}
+
+export {setAsyncData, getAsyncData, clearAllAsync};

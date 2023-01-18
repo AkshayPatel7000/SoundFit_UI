@@ -17,10 +17,13 @@ class FitStore {
     hydration:{},
     moves:{}
   };
+  loading = false;
 
   constructor() {
     makeObservable(this, {
       userData: observable,
+      loading: observable,
+      setLoading: action,
       setActionSheet: action,
       setAuth:action,
       setheartRate: action,
@@ -36,6 +39,9 @@ class FitStore {
       setHydration:action,
       setMoves:action,
     });
+  }
+  setLoading(value){
+    this.loading = value;
   }
   setActionSheet(value) {
     this.userData.actionSheet = value;

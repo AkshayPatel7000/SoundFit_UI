@@ -9,6 +9,7 @@ import {authStore} from './Src/Store/AuthStore/AuthStore';
 import ActionChild from './Src/Components/ActionChild';
 import {getAsyncData} from './Src/Utils/AsyncStorageService';
 import {fitStore} from './Src/Store/AuthStore/FitStore';
+import Login from './Src/Screens/Login';
 
 const App = observer(() => {
   const ref = React.useRef(null);
@@ -24,26 +25,29 @@ const App = observer(() => {
     getIsAuth();
   }, []);
 
-  useEffect(() => {
-    onPress();
-  }, [authStore.userData.actionSheet]);
+  // useEffect(() => {
+  //   onPress();
+  // }, [authStore.userData.actionSheet]);
 
-  const onPress = React.useCallback(() => {
-    const isActive = ref?.current?.isActive();
+  // const onPress = React.useCallback(() => {
+  //   const isActive = ref?.current?.isActive();
 
-    if (!isActive) {
-      ref?.current?.scrollTo(-270);
-    } else {
-      ref?.current?.scrollTo(0);
-    }
-  }, []);
+  //   if (!isActive) {
+  //     ref?.current?.scrollTo(-270);
+  //   } else {
+  //     ref?.current?.scrollTo(0);
+  //   }
+  // }, []);
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <BottomSheet ref={ref}>
         <ActionChild />
       </BottomSheet>
-      <Routes />
+      {
+        fitStore?.userData?.auth?.accessToken ? <Routes /> : <Login/>
+      }
+      
     </GestureHandlerRootView>
   );
 });
