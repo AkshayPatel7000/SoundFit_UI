@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import {View, Text, TouchableOpacity, Animated} from 'react-native';
 import Home from '../../Screens/Home';
-import {Shop} from '../../index';
+import {Shop, Settings} from '../../index';
 const BottomTab = createBottomTabNavigator();
 
 function MyTabBar({state, descriptors, navigation}) {
@@ -111,15 +111,15 @@ const BottomTabs = () => {
         options={{icon: 'walk'}}
         component={Shop}
       />
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="Watchfaces"
         options={{icon: 'ios-watch'}}
         component={Home}
-      />
+      /> */}
       <BottomTab.Screen
-        name="Settings"
-        options={{icon: 'md-settings-sharp'}}
-        component={Home}
+        name="Profile"
+        options={{icon: 'person'}}
+        component={Settings}
       />
     </BottomTab.Navigator>
   );
